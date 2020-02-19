@@ -26,7 +26,7 @@ namespace exerciciocs
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            meutexto.Texto = richTextBox1.Text;
+
         }
 
         private void Button3_Click(object sender, EventArgs e)
