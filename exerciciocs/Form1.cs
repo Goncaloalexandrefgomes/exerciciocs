@@ -17,26 +17,27 @@ namespace exerciciocs
             InitializeComponent();
         }
 
-        RTFFile meutexto = new RTFFile();
+        RTFFile MeuTexto = new RTFFile();
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(path, richTextBox1.Text);
+            richTextBox1.Text = MeuTexto.Texto;
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            MeuTexto.Texto = richTextBox1.Text = "";
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-
+            MeuTexto.Texto = richTextBox1.Text;
+            MeuTexto.Salvar();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            richTextBox1.Text = MeuTexto.Texto;
         }
     }
 }

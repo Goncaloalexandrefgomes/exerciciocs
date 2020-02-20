@@ -11,28 +11,27 @@ namespace exerciciocs
     class RTFFile
     {
 
-        private string _path = Application.StartupPath * "\\Resources\\teste.txt";
+        private string _path = Application.StartupPath + "\\Resources\\poema.txt";
         private string _texto;
-    }
 
-    public string Texto
-    {
-        get
+        public string Texto
         {
-            _texto = File.ReadAllText(_path);
-            return _texto;
+            get
+            {
+                _texto = File.ReadAllText(_path);
+                return _texto;
+            }
+            set { _texto = value; }
         }
 
-        set
+        public void Salvar()
         {
-            _texto = value;
+            File.WriteAllText(_path, _texto);
+        }
+
+        public void Reset()
+        {
+            _texto = "";
         }
     }
-
-    public void Salvar
-    {
-        File.WriteAllText(_path, _texto);
-    }
-
-    public void Reset
 }
